@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+public class MonotonicArrayList {
+   
+    public static boolean isMonotonic(ArrayList<Integer> A){
+        boolean increasing = true;
+        boolean decreasing = true;
+        for(int i=0; i<A.size()-1; i++){
+            if(A.get(i)<A.get(i+1)){
+                decreasing = false;
+                //System.out.println("increasing");
+            }
+            if(A.get(i)>A.get(i+1)){
+            
+                increasing = false;
+                //System.out.println("decreasing");
+            }
+        }
+        return increasing || decreasing;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> A = new ArrayList<Integer>();
+        A.add(1);
+        A.add(2);
+        A.add(2);
+        A.add(3);
+        A.add(4);
+        A.add(5);
+
+        System.out.println(isMonotonic(A));
+
+    }
+    
+}
